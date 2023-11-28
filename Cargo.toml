@@ -1,0 +1,22 @@
+[package]
+name = "package"
+edition = "2021"
+version = "0.0.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+napi = { version = "2.13.3", features = ["tokio_rt"] }
+napi-derive = "2"
+thiserror = "1.0.50"
+miette = { version = "5.10", features = ["fancy"] }
+anyhow = "*"
+human-panic = "*"
+ctor = "*"
+async-backtrace = "0.2.6"
+futures = "*"
+futures-util = "*"
+
+[profile.release]
+debug = "line-tables-only"
